@@ -77,6 +77,8 @@ function loadArt() {
 
 function find_any_play() {
 
+	ga('send', 'event', 'Search', 'Play', "Lucky");
+
 	$.ajax({
 		type: "POST",
 		url: "/find",
@@ -93,6 +95,8 @@ function find_any_play() {
 }
 
 function query() {
+
+	ga('send', 'event', 'Search', 'Query');
 
 	$('#search').attr("value", "Loading...");
 
@@ -118,6 +122,8 @@ function query() {
 
 function play() {
 
+	ga('send', 'event', 'Controlls', 'ButtonClick', 'Play');
+
 	$('#toggle').attr('class', 'glyphicon glyphicon-pause');
 	$('#tp').attr('href', 'JavaScript: pause()');
 
@@ -126,6 +132,8 @@ function play() {
 }
 
 function play_uri(uri) {
+
+	ga('send', 'event', 'Search', 'Play', "URI");
 
 	$('#toggle').attr('class', 'glyphicon glyphicon-pause');
 	$('#tp').attr('href', 'JavaScript: pause()');
@@ -145,6 +153,8 @@ function play_uri(uri) {
 
 function pause() {
 
+	ga('send', 'event', 'Controlls', 'ButtonClick', 'Pause');
+
 	$('#toggle').attr('class', 'glyphicon glyphicon-play');
 	$('#tp').attr('href', 'JavaScript: play()');
 
@@ -152,18 +162,29 @@ function pause() {
 }
 
 function back() {
+
+	ga('send', 'event', 'Controlls', 'ButtonClick', 'Pause');
+
 	api("PUT", "/back");
 }
 
 function next() {
+
+	ga('send', 'event', 'Controlls', 'ButtonClick', 'Next');
+
 	api("PUT", "/next");
 }
 
 function mute() {
+
+	ga('send', 'event', 'Controlls', 'ButtonClick', 'Mute');
+
 	api("PUT", "/mute");
 }
 
 function bumpdown() {
+
+	ga('send', 'event', 'Controlls', 'ButtonClick', 'VolumeDown');
 	api("PUT", "/bumpdown");
 }
 

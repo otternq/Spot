@@ -13,6 +13,7 @@ module Spot
 
     get '/' do
       @feed_url = ENV['SPOT_FEED_URL']
+      @analytics_code = ENV['ANALYTICS_CODE']
       erb :index
     end
 
